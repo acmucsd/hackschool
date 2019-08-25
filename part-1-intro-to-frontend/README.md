@@ -4,13 +4,13 @@
 Welcome to the first session of Hackschool! The idea behind this series is that you'll learn a lot about web development while making a meme generator that others can use. The slides are linked here as well, so follow along with those if you like!
 
 ## Resources 
-[Slides][https://docs.google.com/presentation/d/1UEmN_eM7ajSMaM-EhpxcWeMWUJH4lz0lECTbi2fM6xs]
+[Slides](https://docs.google.com/presentation/d/1UEmN_eM7ajSMaM-EhpxcWeMWUJH4lz0lECTbi2fM6xs)
 
 ## Download Links
 You'll need a text editor! Feel free to use whatever you're comfortable with, but here are three good places to start:
-[Sublime Text][https://www.sublimetext.com/download]
-[VS Code][https://code.visualstudio.com/download]
-[Atom][https://atom.io/]
+[Sublime Text](https://www.sublimetext.com/download)
+[VS Code](https://code.visualstudio.com/download)
+[Atom](https://atom.io/)
 
 ## What even is web development?
 Making websites! Websites can vary hugely in form and function. These can range from static blogs to crazy animations to a repository for all information on the internet. 
