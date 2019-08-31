@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+/* The main title */
+#acm{
+  color: #FFFFFF;
+  font-family: Nunito;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50%;
+  position: absolute;
+  width: 450px;
+  padding-left: 10px;
+}
+
+.navbar{
+  background: #22ACEA;
+  height: 75px;
+}
+
+#links-section{
+  align-items: center;
+  display: flex;
+  float: right;
+  height: 100%;
+  justify-content: center;
+  width: 20%;
+}
+
+body {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.selected{
+  background-color: #0073a8;
+}
+
+.link{
+  color: #FFFFFF;
+  float: right;
+  font-family: Nunito;
+  font-size: 20px;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 120px;
+}
+
+.link:active{
+  background-color: #0073a8;
+}
+
+.link:hover{
+  font-weight: bold;
+}
+
+/* 
+.selected{
+  background-color:;
+}
+*/
+
+.title{
+  color: #22ACEA;
+  font-family: Nunito;
+  font-size: 36px;
+  font-style: bold;
+  font-weight: normal;
+  position: relative;
+  text-align: center;
+}
+
+
+.left-col {
+  float: left;  
+  width: 50%;
+}
+
+.right-col {
+  float: right;
+  width: 50%;
+}
+
+.meme-selection {
+  width: 50px;
+  height: 50px;
+}
