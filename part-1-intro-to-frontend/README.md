@@ -8,8 +8,8 @@ Welcome to the first session of Hackschool! The idea behind this series is that 
 
 ## Download Links
 You'll need a text editor! Feel free to use whatever you're comfortable with, but here are three good places to start:
-[Sublime Text](https://www.sublimetext.com/download)
-[VS Code](https://code.visualstudio.com/download)
+[Sublime Text](https://www.sublimetext.com/download)\ 
+[VS Code](https://code.visualstudio.com/download)\
 [Atom](https://atom.io/)
 
 ## What even is web development?
