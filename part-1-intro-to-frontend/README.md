@@ -87,3 +87,116 @@ p {
 
 ```
 Any HTML document that links to this CSS file will have `<h1>` and `<p>` tags with these attributes. 
+
+### Selectors 
+We can specify any particular element in the DOM by describing where the element is in relation to others. A comprehensive list can be found (here)[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors], though below are a few examples.
+
+#### Class Selector
+Selects elements of the given class. For example, `.hackschool` will select every element with the class attribute set to "hackschool".
+
+#### ID Selector
+Selects elements of the given class. For example, `#navbar` will select every element with the id attribute set to "navbar".
+
+#### Descendant Selector
+Simply place the parent element before the child element you want to select. For example, `div img` will select all `<img>` tags inside any `<div>` tag.
+
+#### Direct Descendant Selector
+Denoted by a `>` symbol. For instance, `div > img` will only select `<img>` tags that are an immediate child of a `<div>` tag. 
+
+### Building the Meme Gen
+Obviously we're not actually going to start from bare-bones HTML and Javascript (we'll be using React to start making the actual end product), but we have created part of the meme generator in pure HTML and CSS as an example for you to get familiar with how to use HTML and CSS. Below are all the major components, listed from top to bottom.
+
+#### Navigation Bar
+```html
+<div class="navbar">
+    <h1 id="acm">ACM UCSD Meme Gen</h1>
+    <div id="links-section">
+      <a class="link selected" href="index.html">Generator</a>
+      <a class="link" href="gallery.html">Gallery</a>
+    </div>
+</div>
+```
+```css
+.navbar{
+  background: #22ACEA;
+  height: 75px;
+}
+
+#links-section{
+  align-items: center;
+  display: flex;
+  float: right;
+  height: 100%;
+  justify-content: center;
+  width: 20%;
+}
+
+#acm{
+  color: #FFFFFF;
+  font-family: Nunito;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50%;
+  position: absolute;
+  width: 450px;
+  padding-left: 10px;
+}
+
+```
+#### Left Column
+```html
+<div class="left-col">
+    <img id="selected-meme" width=500 height=333 src="https://i.imgflip.com/1ur9b0.jpg"/>
+</div>
+```
+```css
+.left-col {
+  float: left;
+  width: 50%;
+}
+```
+#### Right Column
+```html
+<div class="right-col">
+    <!-- everything else goes here! -->
+</div>
+```
+```css
+.right-col {
+  float: right;
+  width: 50%;
+}
+```
+
+##### Textboxes
+```html
+<div class="textboxes">
+    <div class="textbox">
+        <p>Text Box 1</p>
+        <textarea cols="50" rows="2"></textarea>
+    </div>
+    <div class="textbox">
+        <p>Text Box 2</p>
+        <textarea cols="50" rows="2"></textarea>
+    </div>
+</div>
+```
+##### Meme Selection
+```html
+<div id="meme-templates">
+    <p id="meme-title">Distracted Boyfriend</p>
+    <img class="meme-selection" src="https://i.imgflip.com/1ur9b0.jpg" alt />
+    <img class="meme-selection" src="https://i.imgflip.com/30b1gx.jpg" alt />
+    <img class="meme-selection" src="https://i.imgflip.com/1g8my4.jpg" alt />
+    <img class="meme-selection" src="https://i.imgflip.com/1otk96.jpg" alt />
+    <img class="meme-selection" src="https://i.imgflip.com/24y43o.jpg" alt />
+</div>
+```
+```css
+.meme-selection {
+  width: 50px;
+  height: 50px;
+}
+```
