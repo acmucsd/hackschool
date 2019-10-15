@@ -29,32 +29,32 @@ We'll be focusing on the basics front-end development today, so be sure to come 
 HTML stands for Hypertext Markup Language, and defines the basic structure of any webpage. Different elements are defined by opening and closing tags, and most tags can have other tags inside them. Here are some basic tags that you might use: 
 
 ### Paragraph Tag
-```
+```html
 <p>This is a paragraph tag.</p>
 ```
 Defines paragraph content. Put any regular text in here. 
 
 ### Heading Tag
-```
+```html
 <h1>This is a heading</h1>
 <h2>This is another heading</h2>
 ```
 Defines different levels of headings (HTML has 6 in total). 
 
 ### Image Tag
-```
+```html
 <img src="image.jpg" alt="the thing didn't load"></img>
 ```
 Loads in an image. Link to an image is given using the src attribute. Alt text can also be displayed if the image does not load. 
 
 ### Hyperlink Tag
-```
+```html
 <a href="http://acm.ucsd.edu/">Click here to go to ACM's website!</a>
 ```
 Defines a hyperlink. Clicking on the enclosed text will tell the browser to navigate to the link given by the href attribute. 
 
 ### Form tag
-```
+```html
 <form>
   Enter your name: <input type="text"></input>
   <input type="submit" value="Submit"></input>
@@ -63,7 +63,7 @@ Defines a hyperlink. Clicking on the enclosed text will tell the browser to navi
 Defines a form, encapsulating data with all input tags inside. The form data can be sent to another webpage via HTTP request (more on that on part 4 when we talk about APIs).
 
 ### Head tag
-```
+```html
 <head>
   <!-- metadata goes in here -->
 </head>
@@ -89,7 +89,7 @@ p {
 Any HTML document that links to this CSS file will have `<h1>` and `<p>` tags with these attributes. 
 
 ### Selectors 
-We can specify any particular element in the DOM by describing where the element is in relation to others. A comprehensive list can be found (here)[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors], though below are a few examples.
+We can specify any particular element in the DOM by describing where the element is in relation to others. A comprehensive list can be found [here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors), though below are a few examples.
 
 #### Class Selector
 Selects elements of the given class. For example, `.hackschool` will select every element with the class attribute set to "hackschool".
