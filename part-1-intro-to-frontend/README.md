@@ -104,7 +104,7 @@ Simply place the parent element before the child element you want to select. For
 Denoted by a `>` symbol. For instance, `div > img` will only select `<img>` tags that are an immediate child of a `<div>` tag. 
 
 ### Building the Meme Gen
-Obviously we're not actually going to start from bare-bones HTML and Javascript (we'll be using React to start making the actual end product), but we have created part of the meme generator in pure HTML and CSS as an example for you to get familiar with how to use HTML and CSS. Below are all the major components, listed from top to bottom.
+Obviously we're not actually going to start from bare-bones HTML and Javascript (we'll be using React to start making the actual end product), but we have created part of the meme generator in pure HTML and CSS as an example for you to get familiar with how to use HTML and CSS. Below are all the major components, listed from top to bottom. We'll need this code for when we start using React, so be sure to understand how it works!
 
 #### Navigation Bar
 ```html
@@ -145,6 +145,9 @@ Obviously we're not actually going to start from bare-bones HTML and Javascript 
 }
 
 ```
+
+You most likely don't have Nunito installed by default, so you can import it by adding `@import url('https://fonts.googleapis.com/css?family=Nunito');` to the top of your document.
+
 #### Left Column
 ```html
 <div class="left-col">
@@ -200,3 +203,5 @@ Obviously we're not actually going to start from bare-bones HTML and Javascript 
   height: 50px;
 }
 ```
+
+That is essentially it for all the content we have! Be sure to look over part 2 for more information about Javascript and Node.js!
