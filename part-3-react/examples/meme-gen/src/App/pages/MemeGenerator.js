@@ -1,29 +1,40 @@
 import React from 'react';
+import axios from 'axios';
 require('../style/generator.css')
 
 /** Component for selecting meme template */
 class TemplateButton extends React.Component {
-  /* 
-      TODO: complete this component
-           Props: meme, an object containing information about the meme.
-                        You'll need the id and url properties.                       
-                  reselectMeme, a function that changes the meme template on the left 
-                                when the image is clicked.
-                  changeText, a function that changes the name of the meme template when
-                              hovering over different templates.
-                  resetText, a function that resets the displayed name to the current
-                             template when the mouse leaves the buttons.
-  */
+  render() {
+    return (
+      <img
+          key={this.props.meme.id}
+          width='50'
+          height='50'
+          src={this.props.meme.url}
+          alt=''
+          onClick={this.props.reselectMeme}
+          onMouseOver={this.props.changeText}
+          onMouseLeave={this.props.resetText}
+          className='meme-template' >
+      </img>
+    );
+  }
+  
 }
 
-/** Text box for meme captions */
 class MemeTextBox extends React.Component {
-  /*
-      TODO: complete this component
-          Props: index, a number indicating which text box this is
-                 handleMemeText, a function that updates 
-                                 the state in MemeGeneratorWrapper when we 
-                                 update the text
+  render() {
+    return (
+      <div className='memetext'>
+        <p>Text Box {this.props.index + 1}</p>
+        <textarea
+          cols='50'
+          rows='2'
+          onChange={e => this.props.handleMemeText(this.props.index,e.target.value)}>
+        </textarea>
+      </div>
+    );
+  }
 }
 
 /** Component that handles the meme generator */
@@ -42,19 +53,40 @@ class MemeGenerator extends React.Component {
     }));
   }
 
+  uploadMeme = (event) => {
+    event.preventDefault();
+    let myImg = {
+      template_id: this.props.currentMeme.id,
+      photoURL: this.props.currentMeme.url,
+      memeTexts: this.props.memeText,
+      user: "Daniel Truong"
+    };
+    axios.post('/upload', myImg)
+      .then(response => {
+        if (response.status === 200){
+          window.location.href = "/gallery";
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   checkMatch = (meme) => {
     let regexp = new RegExp(this.state.searchTerm,'gi');
     return (this.state.searchTerm === "" || meme.name.match(regexp) != null);
   }
 
   createTextBoxes = () => {
-    /* 
-        TODO: create a list of text boxes for the user to enter text into
-            Props: currentMeme, an object containing fields
-                   handleMemeText, a function that updates 
-                   the state in MemeGeneratorWrapper when we 
-                   update the text
-    */
+    let boxList = [];
+    if (this.props.currentMeme) {
+      for (let i = 0; i < this.props.currentMeme.box_count; i++) {
+        boxList.push(
+          <MemeTextBox key={i} index={i} handleMemeText={this.props.handleMemeText}/>
+        );
+      }
+    }
+    return boxList;
   }
 
   render() {
