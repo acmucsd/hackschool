@@ -1,2 +1,9 @@
 # i'm on a mac
 .DS_Store
+
+# don't upload node_modules
+node_modules/
+
+# don't upload package stuff
+package-lock.json
+yarn.lock

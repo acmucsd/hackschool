@@ -1,0 +1,36 @@
+/** external styling **/
+.likedButton {
+  font-weight: bold;
+}
+ .memeImage{
+  height: auto;
+  max-height: 300px;
+  max-width: 300px;
+  object-fit: cover;
+}
+
+.memeImageOutline{
+  height: 300px;
+}
+
+.memeModel{
+  border-radius: 1px;
+  border-width: 1px;
+  border: solid;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+  display: block;
+  float: left;
+  height: 400px;
+  margin-bottom: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-top: 10px;
+  transition: 0.3s;
+  width: 350px;
+}
+
+.memeModel:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.unlikedButton {  }

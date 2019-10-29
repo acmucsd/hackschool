@@ -1,0 +1,18 @@
+.buttons-section{
+  width: 100%;
+  align-self: right;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.left-col { 
+  float: left;
+  width: 50%;
+}
+
+.right-col {
+  float: right;
+  width: 50%;
+}
+

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+#acm{
+  color: #FFFFFF;
+  font-family: Nunito;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: bold;
+  width: 450px;
+}
+
+#nav-bar{
+  align-items: center;
+  background: #22ACEA;
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+}
+
+#links-section{
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.App {
+  width: 100%;
+  text-align: center;
+}
+
+.selected{
+  background-color: #0073a8;
+}
+
+.link{
+  color: #FFFFFF;
+  float: right;
+  font-family: Nunito;
+  font-size: 20px;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 120px;
+}
+
+.link:active{
+  background-color: #0073a8;
+}
+
+.link:hover{
+  font-weight: bold;
+}
+
+.title{
+  color: #22ACEA;
+  font-family: Nunito;
+  font-size: 36px;
+  font-style: bold;
+  font-weight: normal;
+  position: relative;
+  text-align: center;
+}
