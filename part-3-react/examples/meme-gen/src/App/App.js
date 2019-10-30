@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import MemeGallery from './components/MemeGallery';
-import MemeGeneratorWrapper from './components/MemeGeneratorWrapper';
+import MemeGallery from './components/MemeGallery/MemeGallery';
+import MemeGeneratorWrapper from './components/MemeGenerator/MemeGeneratorWrapper';
 import NavBar from './components/NavBar';
 
 

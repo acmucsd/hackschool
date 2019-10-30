@@ -4,7 +4,7 @@ import MemeTextBox from './MemeTextBox';
 import TemplateButton from './TemplateButton';
 import Canvas from './Canvas';
 
-require('../style/generator.css')
+require('../../style/generator.css')
 
 
 /** Component that handles the meme generator */
