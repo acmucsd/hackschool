@@ -7,7 +7,7 @@ Part 1 (10/15) - [Intro to Front-end Development (HTML, CSS)](part-1-intro-to-fr
 
 Part 2 (10/22) - [Intro to Back-end Development (Node.js)](part-2-intro-to-backend)  - [[Slides Presentation]](https://docs.google.com/presentation/d/1x_XGSfqG3R9hMudw3pg2SQgj89CiZzoT_FGwlJ_mbWo/edit?usp=sharing) - [[Source Folder]](https://github.com/acmucsd/hackschool/tree/master/part-2-intro-to-backend)
 
-Part 3 (10/29) - React
+Part 3 (10/29) - [React](part-3-react) - [[Slides Presentation]](https://docs.google.com/presentation/d/1RikFGX4PmBYuTsnmpg1AQQrP4KMr7EWa_6lCWg20a9c/edit?usp=sharing) - [[Source Folder]](https://github.com/acmucsd/hackschool/tree/master/part-3-react)
 
 Part 4 (11/05) - APIs, HTTP, and How the Web Works
 
