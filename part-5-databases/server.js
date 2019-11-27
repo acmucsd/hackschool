@@ -3,6 +3,8 @@ const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
 const mongo = require('mongodb');
+const config = require('./config.json');
+const qs = require('qs');
 
 const mongoClient = mongo.MongoClient;
 const app = express();
@@ -44,14 +46,24 @@ server.listen(port, '0.0.0.0', () => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-function sendToMemeDatabase(fields) {
+function sendToDatabase(fields) {
   memeCollection.insertOne(fields, (err, res) => {
      if (err) throw err;
   });
 }
 
-function populateMemeFields(fields) {
-  
+function populateMemeFields(photoURL, topText, bottomText, user){
+  let memeObj = {
+    photoURL: photoURL,
+    topText: topText,
+    bottomText: bottomText,
+    user: user,
+    likes: 0,
+    isBolded: false
+  };
+
+  // increments id so each meme has a unique I
+  return memeObj;
 }
 
 app.get('/test', (req, res) => {
@@ -68,12 +80,18 @@ app.get('/test', (req, res) => {
 // JSON.stringify(data).
 app.get('/getmemes', (req, res) => {
   // WHat should our query be if we want to retreive everything in our database?
-  let query;
+
   // How do we use the find operaiton. We also want to make the data into an array so
   // consider using the .toArray function. 
   // (some collection).toArray((err, result) => {
   //    result represents the array
   // })
+
+  let query = {};
+  memeCollection.find(query).toArray(function(err, result){
+    if (err) throw err;
+    res.send(JSON.stringify(result));
+  });
 });
 
 // TODO: Create an API endpoint using any of the APIs from the 
@@ -103,7 +121,6 @@ app.get('/bestmeme', (req, res) => {
  * and creates the meme image. Once the image has been created, store it
  * in the instance variable, meme.
  */
-let meme;
 app.post('/upload', (req, res) => {
     // HINT: First step is to understand the imgflip API and make an object
     // that will be inputted in the caption_image endpoint from imgflip.
@@ -113,18 +130,12 @@ app.post('/upload', (req, res) => {
       template_id: params.template_id,
       username: config.username,
       password: config.password,
-      text0: "hack school",
-      text1: "works",
-      text2: "doesn't work"
       // we will be using the boxes key instead of text0 and text1 since 
       // each memes takes in different amount of texts
-      /*
       boxes: params.memeTexts.map((text) => {
         return { "text": text };
       })
-      */
     };
-    //res.send(apiData);
     axios({
       method: 'post',
       url: url,
@@ -135,11 +146,14 @@ app.post('/upload', (req, res) => {
     })
       .then((response) => {
         if (response.data.success){
-          // Here, we only stored the  meme by putting it into a variable and logging it. 
+          // Here, we only stored the meme by putting it into a variable and logging it. 
           // TODO: Now that we have a database, send the meme we have to the mongo database.
-          meme = response.data.data.url;
-          console.log(meme);
-          res.status(200).send();
+          const fields = populateMemeFields(response.data.data.url, params.topText, params.bottomText, params.user);
+          sendToDatabase(fields);
+          res.status(200).send({
+            success: true,
+            url: response.data.data.url
+          });
         } else {
           console.log("Unsuccessful call to the imgflip API");
           console.log(response.data.error_message);
