@@ -1,4 +1,4 @@
-# Hackschool Fall 2019
+# Hack School Fall 2019
 Welcome! This repository contains slides and examples used in all parts of Hackschool. If you're just looking, feel free to play around with any of these examples!
 
 # Schedule
