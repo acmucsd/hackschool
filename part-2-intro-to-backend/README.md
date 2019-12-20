@@ -76,16 +76,20 @@ This expression would evaluate to **false**. This is because although the values
 A loop is a sequence of instructions that is repeated until a specified condition is met. There are two types: a while loop and a for loop.
 
 *while loop*   
-`let i = 0;`
-`while (i < 5) {`
-`  console.log(i);`
-`  i++;`
-`}`
+```
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+```
 
 *for loop*
-`for (let i = 0; i < 5; i++) {`
-`  console.log(i);`
-`}`
+```
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+```
 
 In each of the above pieces of code, a counter variable called *i* was initialized to 0. Then after each all lines of code are run from inside the loop, the counter
 variable *i* increments by 1. Then, the loop continues until `i < 5` evaluates to false.  
@@ -93,9 +97,14 @@ variable *i* increments by 1. Then, the loop continues until `i < 5` evaluates t
 **Objects**  
 An object is an unordered collection of data containing key-value pairs (similar to a dictionary in Python or a HashTable in Java). Different key-value pairs in the same object cannot have the same keys.  
 
-`let obj = {`
-` "name": Daniel Truong,`
-`  "age": 14`
-`}`
+```
+let obj = {
+  "name": Daniel Truong,
+  "age": 14`
+}
+```
 
 # What is Node.js?
+Before, JavaScript could only be run on browsers (think about it if you had to do your PAs in your browser. oof). Servers were also only run using technologies such as ASP.NET.  
+
+However, a new JavaScript runtime environment called Node.js was created in 2009, which allows for JavaScript code to be run from a local machine. As such, the development of servers using JavaScript became prominent. So now, JavaScript could be used for client-side and server-side development.  
