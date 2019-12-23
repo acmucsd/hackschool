@@ -2,9 +2,17 @@
 
 Welcome to our 2nd workshop where we will go over the language of JavaScript as well as setting up a server using nodejs.
 
+Taught by: Daniel Truong & Kyle Hu
+
 # Important Links
 [ACM UCSD Portal](https://acmucsd.com/)  
 [Slides](http://acmurl.com/hackschoolpt2/)
+
+# Resources
+- [What is JavaScript?](https://en.wikipedia.org/wiki/JavaScript)
+- [Javascript: Globally Scoped](https://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/)
+- [Specifics of a package.json file](https://www.geeksforgeeks.org/node-js-package-json/)
+- [Details of a Callback Function](https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced)
 
 # Installing Node.js
 
@@ -108,3 +116,64 @@ let obj = {
 Before, JavaScript could only be run on browsers (think about it if you had to do your PAs in your browser. oof). Servers were also only run using technologies such as ASP.NET.  
 
 However, a new JavaScript runtime environment called Node.js was created in 2009, which allows for JavaScript code to be run from a local machine. As such, the development of servers using JavaScript became prominent. So now, JavaScript could be used for client-side and server-side development.  
+
+# Client-Server Model
+A **server** is a computer designed to process requests & data which can be loaded into client web pages. For example, let's look at a product such as Facebook. When you make a post through your client, the server will receive the post. Then, since this post exists in the server, other client devices will show the post. Generally, this is how the model works. 
+
+# Steps to Take
+We are going to start the back-end development. 
+- Create a directory called *server*.
+- *cd* into this directory, and run the command, *npm init*.
+- Create a new file called *app.js*.
+- Open this file and write the line:
+  - `console.log("Excited to make memes :)");`
+- In your terminal, type *node app.js*  
+
+After these steps, there should be an output "Excited to make memes" in the terminal.  
+
+# npm (node package manager)
+**npm (or node package manager)** is a program for node which manages the "packages" and app dependencies. A "package" refers to a piece of software which has already been created and can be imported.  
+
+# JSON & package.json
+JSON stands for JavaScript Object Notation. Essentially, a JSON file is one object that is used to transmit data objects. A JSON file can be imported into a JavaScript file and its contents can be easily accessed.  
+  
+When running the *npm init* command, a new file known as *package.json* is created. A *package.json* file is essential for all node applications, as it outlines the specifications for the application. The different aspects of the file can be found in detail [here](https://www.geeksforgeeks.org/node-js-package-json/). 
+
+# Steps to Starting a Server
+Copy and paste the following code into the *app.js* file.  
+```
+const express = require('express');
+const http = require('http');
+const app = express();
+const server = http.createServer(app);
+
+// Server will always find an open port.
+const port = process.env.PORT || 3001;
+server.listen(port, '0.0.0.0', () => {
+    console.log(`Server listening on port ${port}`);
+});
+```  
+Next, run the following commands:
+- npm install express --save
+- npm install http --save
+
+The *npm install* command installs a package into our application, which allows it to be imported. Next, run *node app.js* in order to run the application. Now, the terminal should output "Server listeing on port 3001". 
+
+# Creating Routes and Pages
+When accessing certain endpoints, we can send certain responses. Here are a few examples:  
+```
+// Access example.com/
+app.get('/', (req, res) => {
+    res.send("I love HackSchool.");
+});
+
+// Access example.com/memes
+app.get('/memes', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+```
+These functions are only called when the user tries to go to the corresponding page. In express, these functions have two parameters:
+  - endpoint
+  - [callback function](https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced)
+  
+This concept will be taught more in depth in Workshop 4. 
