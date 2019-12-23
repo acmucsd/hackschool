@@ -177,3 +177,5 @@ These functions are only called when the user tries to go to the corresponding p
   - [callback function](https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced)
   
 This concept will be taught more in depth in Workshop 4. 
+
+That is it for Workshop 2. We recommend going through the slides as this would provide a more detailed explanation.
