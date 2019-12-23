@@ -13,4 +13,4 @@ Part 4 (11/05) - [APIs, HTTP, and How the Web Works](https://github.com/acmucsd/
 
 Part 5 (11/12) - [Storing Data with Databases (MongoDB)](https://github.com/acmucsd/hackschool/tree/master/part-5-databases) - [[Slides Presentation]](https://docs.google.com/presentation/d/1qa13TULHf4xIpPXJjVshT_Rm3VorsIwDUCcktRKe0g8/edit#slide=id.p)
 
-Part 6 (11/19) - [Deploying with Heroku](https://github.com/acmucsd/hackschool/tree/master/part-6-deployment)
+Part 6 (11/19) - [Deploying with Heroku](https://github.com/acmucsd/hackschool/tree/master/part-6-deployment) - [[Slides Presentation]](http://acmurl.com/hackschoolpt6)
