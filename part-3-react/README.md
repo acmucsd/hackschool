@@ -58,7 +58,34 @@ class Example extends React.Component {
 We can then display state variables by including them in our rendered component.
 
 ### Props 
-Components can also render other components, and sometimes, we want to pass down information from the parent to the child, whether that be data, or even functions. We do this via props. Typically, data that we pass down as props will be from the state of one of our components, and when that state gets changed, all the components that got that data through props will also re-render. To pass down props into a 
+Components can also render other components, and sometimes, we want to pass down information from the parent to the child, whether that be data, or even functions. We do this via props. Typically, data that we pass down as props will be from the state of one of our components, and when that state gets changed, all the components that got that data through props will also re-render. To pass down props into a component, we use syntax similar to HTML tag attributes: 
+```javascript
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "Daniel"
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <Greeting name={this.state.name} />
+      </div>
+    )
+  }
+}
+
+class Greeting extends React.Component {
+  render() {
+    <div>
+      <p>Hello, {this.props.name}!</p>
+    </div>
+  }
+}
+```
+In this case, the App component will display "Hello, Daniel!", as this is the value of the name prop passed to the Greeting component.
 
 This is definitely a lot of information to take in at once, so let's go through everything with a basic example.
 
@@ -93,7 +120,7 @@ The basic-text example contains a crude application where you can type in any te
 ```
 We're only including what each render function returns for the sake of brevity, though you can see that the App component renders both the Form and Feed components. The Form component is the text box that the user types into, and the Feed component is what displays the text the user has typed in. Let's take a look at how this works. 
 
-The App component has a function called *constructor*; this is called whenever a new App component is created: 
+Here's the constructor for our App component: 
 ```javascript
 constructor() {
   super();
@@ -123,11 +150,7 @@ handleChange = (event) => {
   })
 }
 ```
-You may notice that both functions use a function called this.setState() to change the state instead of changing the state directly. This function is provided by React and is how React knows to re-render the components - without it, nothing would happen. These are both passed down as props to the Form and Feed components respectively, as the triggers for these functions are both inside those components. 
+You can see that these functions are passed down into the Form component, where they are added as event listeners to the form and text box. This means that whenever the text in the textbox is changed, `handleChange` will be called, and when the user presses Enter or hits the "Submit" button, `handleSubmit` will be called. When App's state is updated, since `textList` is passed down to the Feed component as a prop, the Feed component will immediately be updated. 
 
-
-
-
-
-
-Another thing to note is that every component in our web app is controlled by the App component. This is an incredibly common design pattern that you should definitely try to use in your React projects, as it makes the structure of your code easier to understand, and it keeps the entirety of your website's current state in one place. 
+## Conclusion
+There's definitely a lot to go over here, so I encourage you to go over our [slides](https://docs.google.com/presentation/d/1RikFGX4PmBYuTsnmpg1AQQrP4KMr7EWa_6lCWg20a9c/)! We have another example that forms the backbone of our meme generator, which we do go over in the slides, but feel free to look over the solution code in here as well!
